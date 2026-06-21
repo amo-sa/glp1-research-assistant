@@ -1,0 +1,22 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Data (raw/processed are regenerable from the ingestion script — don't bloat git history)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+
+# Vector DB persistence (created in a later step)
+chroma_db/
+
+# OS/editor noise
+.DS_Store
+.vscode/
