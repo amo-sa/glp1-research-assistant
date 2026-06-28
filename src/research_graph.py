@@ -100,27 +100,44 @@ def search_agent(state: ResearchState) -> dict:
         state["question"], normalize_embeddings=True
     ).tolist()
 
+    # Retrieve a larger candidate pool than needed so the per-source
+    # deduplication below has enough diversity to work with.
+    # Without this, filtering after a TOP_K=5 fetch just returns fewer
+    # chunks -- it doesn't replace redundant ones with better alternatives.
     results = _collection.query(
         query_embeddings=[question_vector],
-        n_results=TOP_K,
+        n_results=15,  # fetch 3x more than TOP_K
         include=["documents", "metadatas", "distances"],
     )
 
+    # Apply per-source limit: walk results in distance order, keep at most
+    # MAX_PER_SOURCE chunks per PMID, stop once we have TOP_K diverse chunks.
+    # This ensures redundant slots get filled by the next best diverse source
+    # rather than just being dropped.
+    MAX_PER_SOURCE = 2
+    pmid_counts = {}
     chunks = []
     for i in range(len(results["ids"][0])):
-        chunks.append({
+        if len(chunks) >= TOP_K:
+            break
+        chunk = {
             "id": results["ids"][0][i],
             "text": results["documents"][0][i],
             "metadata": results["metadatas"][0][i],
             "distance": results["distances"][0][i],
-        })
+        }
+        pmid = chunk["metadata"]["pmid"]
+        count = pmid_counts.get(pmid, 0)
+        if count < MAX_PER_SOURCE:
+            chunks.append(chunk)
+            pmid_counts[pmid] = count + 1
 
     for c in chunks:
         meta = c["metadata"]
         print(f"    [{c['distance']:.4f}] PMID {meta['pmid']} | {meta['section']}")
 
-    # Only return the field this node owns -- LangGraph merges the rest
     return {"chunks": chunks}
+
 
 
 def summarize_agent(state: ResearchState) -> dict:

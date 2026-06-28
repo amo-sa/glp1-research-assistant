@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-06-27T03:30:51.007305+00:00",
+  "timestamp": "2026-06-28T19:56:45.932317+00:00",
   "total": 15,
-  "successful": 15,
+  "successful": 14,
   "outputs": [
     {
       "question": "What weight loss did semaglutide achieve in clinical trials?",
@@ -10,22 +10,11 @@
       "relevant_pmids": [
         "42225300"
       ],
-      "final_answer": "The provided PubMed abstract excerpts do not explicitly state the weight loss achieved by semaglutide in clinical trials. However, they do mention that semaglutide has demonstrated significant weight loss in clinical trials [PMID 42166306 | BACKGROUND]. \n\nFor more specific information on the weight loss achieved by semaglutide in clinical trials, further data would be required.",
-      "retrieved_contexts": [
-        "Define demographic and clinical predictors of weight loss outcomes in patients with obesity prescribed semaglutide in real-world practice.",
-        "Further prospective, longitudinal research is warranted to fully characterize these apparent promising effects of semaglutide for weight management, and their relationship with clinical outcomes.",
-        "In routine clinical care, lower doses of semaglutide were associated with clinically meaningful 24-week weight loss in Chinese adults with obesity.",
-        "Novel antiobesity medications have demonstrated significant weight loss in clinical trials. Data on real-world use of semaglutide are lacking. Such data are vital to inform health benefit design of this and other costly incretin mimetics, as well as inform patients of expected outcomes outside of clinical trials.",
-        "Semaglutide 2.4\u2009mg causes substantial weight loss, but its average effect on patient-reported physical function requires interpretation against clinically meaningful thresholds and routine clinical expectations. This systematic review and meta-analysis aimed to evaluate the effects of once-weekly subcutaneous semaglutide 2.4\u2009mg on patient-reported physical functioning and weight-related quality-of-life outcomes in adults with overweight or obesity."
-      ],
-      "retrieved_pmids": [
-        "42248359",
-        "42217114",
-        "42297751",
-        "42166306",
-        "42297754"
-      ],
-      "iterations": 1
+      "final_answer": null,
+      "retrieved_contexts": [],
+      "retrieved_pmids": [],
+      "iterations": 0,
+      "error": "Error code: 400 - {'detail': '404: Model not found'}"
     },
     {
       "question": "What effect do GLP-1 receptor agonists have on lean mass?",
@@ -58,20 +47,20 @@
       "relevant_pmids": [
         "42225300"
       ],
-      "final_answer": "According to PMID 42225300, an indirect treatment comparison (ITC) suggests that oral semaglutide 25\u2009mg and subcutaneous (s.c.) semaglutide 2.4\u2009mg offer comparable efficacy for weight management in adults with obesity [PMID 42225300 | CONCLUSIONS].\n\nIn terms of specific outcomes, the results show that oral and s.c. semaglutide delivered comparable efficacy across all outcomes assessed, with small numerical advantages favouring one or the other on some endpoints, but the differences were not clinically significant [PMID 42225300 | RESULTS]. For example, s.c. semaglutide showed a small numerical advantage in percentage weight change, but the estimated treatment difference (ETD) was 1.01%-points (95% CI: -1.61, 3.63) under treatment regimen, which is below the FDA's 5% threshold for clinical relevance [PMID 42225300 | RESULTS].\n\nOverall, the safety profiles of oral and s.c. semaglutide were broadly comparable [PMID 42225300 | RESULTS].",
+      "final_answer": "According to PMID 42225300, an indirect treatment comparison (ITC) suggests that oral semaglutide 25\u2009mg and subcutaneous (s.c.) semaglutide 2.4\u2009mg offer comparable efficacy for weight management in adults with obesity.\n\nFurther details from the same study (PMID 42225300) indicate that oral and s.c. semaglutide delivered comparable efficacy across all outcomes assessed, with small numerical advantages favouring one or the other on some endpoints, but the differences were not clinically significant. Specifically, s.c. semaglutide showed a small numerical advantage in percentage weight change, but the estimated treatment difference (ETD) was 1.01%-points (95% CI: -1.61, 3.63) under treatment regimen, and 0.55%-points (95% CI: -2.25, 3.35) under efficacy, both of which are below the FDA's 5% threshold for clinical relevance.\n\nThe safety profiles of oral and s.c. semaglutide were broadly comparable (PMID 42225300).",
       "retrieved_contexts": [
         "Further prospective, longitudinal research is warranted to fully characterize these apparent promising effects of semaglutide for weight management, and their relationship with clinical outcomes.",
         "This ITC suggests that oral semaglutide 25\u2009mg and s.c. semaglutide 2.4\u2009mg offer comparable efficacy for weight management in adults with obesity.",
         "Oral and s.c. semaglutide delivered comparable efficacy across all outcomes assessed. While small numerical advantages favoured oral or s.c. semaglutide on some endpoints, the differences and associated uncertainty supported therapeutic equivalence. For percentage weight change, s.c. semaglutide showed a small numerical advantage (estimated treatment difference [ETD]: 1.01%-points (95% confidence intervals [CI]: -1.61, 3.63) under treatment regimen; 0.55%-points (95% CI: -2.25, 3.35) under efficacy), but well below the FDA's 5% threshold for clinical relevance. Safety profiles were broadly comparable.",
-        "Semaglutide, a GLP-1 receptor agonist, has demonstrated significant weight loss benefits for patients with overweight or obesity in both oral and subcutaneous (s.c.) formulations. Given comparable systemic exposure between formulations, an indirect treatment comparison (ITC) was conducted to confirm comparable efficacy.",
-        "Semaglutide 2.4\u2009mg causes substantial weight loss, but its average effect on patient-reported physical function requires interpretation against clinically meaningful thresholds and routine clinical expectations. This systematic review and meta-analysis aimed to evaluate the effects of once-weekly subcutaneous semaglutide 2.4\u2009mg on patient-reported physical functioning and weight-related quality-of-life outcomes in adults with overweight or obesity."
+        "Semaglutide 2.4\u2009mg causes substantial weight loss, but its average effect on patient-reported physical function requires interpretation against clinically meaningful thresholds and routine clinical expectations. This systematic review and meta-analysis aimed to evaluate the effects of once-weekly subcutaneous semaglutide 2.4\u2009mg on patient-reported physical functioning and weight-related quality-of-life outcomes in adults with overweight or obesity.",
+        "Define demographic and clinical predictors of weight loss outcomes in patients with obesity prescribed semaglutide in real-world practice."
       ],
       "retrieved_pmids": [
         "42217114",
         "42225300",
         "42225300",
-        "42225300",
-        "42297754"
+        "42297754",
+        "42248359"
       ],
       "iterations": 1
     },
@@ -82,7 +71,7 @@
       "relevant_pmids": [
         "42316327"
       ],
-      "final_answer": "According to PMID 42316327, semaglutide is associated with a reduced risk of major adverse cardiovascular events (MACE) (RR, 0.71; 95% CI [0.60-0.84]; p\u2009<\u20090.001) [PMID 42316327 | RESULTS]. \n\nAdditionally, PMID 42304551 mentions that semaglutide reduced major adverse cardiovascular outcomes (MACE) in individuals with overweight or obesity and established cardiovascular disease (CVD) but without diabetes in the SELECT trial [PMID 42304551 | BACKGROUND].\n\nPMID 42291047 also investigated the association of semaglutide with MACE among individuals with overweight/obesity without diabetes who had risk factors for atherosclerotic cardiovascular disease (ASCVD) in the real-world setting [PMID 42291047 | BACKGROUND].\n\nTherefore, based on the provided abstracts, semaglutide appears to reduce the risk of major cardiovascular events.",
+      "final_answer": "According to PMID 42316327, semaglutide is associated with a reduced risk of major adverse cardiovascular events (MACE) (RR, 0.71; 95% CI [0.60-0.84]; p\u2009<\u20090.001) [PMID 42316327 | RESULTS]. Additionally, PMID 42304551 mentions that semaglutide reduced MACE in individuals with overweight or obesity and established cardiovascular disease (CVD) but without diabetes in the SELECT trial [PMID 42304551 | BACKGROUND]. Furthermore, PMID 42291047 states that semaglutide 2.4 mg is approved for the secondary prevention of MACE among individuals with overweight/obesity [PMID 42291047 | BACKGROUND]. Therefore, based on the provided abstracts, yes, semaglutide reduces the risk of major cardiovascular events.",
       "retrieved_contexts": [
         "In the SELECT trial, semaglutide reduced major adverse cardiovascular outcomes (MACE) in individuals with overweight or obesity and established cardiovascular disease (CVD) but without diabetes. However, real-world cardiovascular event rates in comparable populations remain uncharacterised. We therefore aimed to (1) assess real-world cardiovascular outcomes in a SELECT-like cohort with obesity, (2) compare them to the general population and a broader population of individuals with obesity and (3) evaluate the cardiovascular preventive potential of semaglutide in this SELECT-like cohort with obesity.",
         "Semaglutide 2.4 mg is approved for the secondary prevention of major adverse cardiovascular events (MACE) among individuals with overweight/obesity. We investigated its association with MACE among individuals with overweight/obesity without diabetes who had risk factors for atherosclerotic cardiovascular disease (ASCVD) in the real-world setting.",
@@ -107,7 +96,7 @@
         "42211533",
         "42207966"
       ],
-      "final_answer": "Based on the provided abstracts, tirzepatide appears to produce greater weight loss than semaglutide in certain comparisons. Specifically, a meta-analysis of three studies found that tirzepatide caused a significantly greater reduction in weight than semaglutide (pooled MD = -5.19 kg, 95% CI: -7.96 to -2.42; p = 0.0002) [PMID 42211533 | RESULTS]. Additionally, a network meta-analysis of 25 trials found that tirzepatide 15\u2009mg resulted in a greater percent weight reduction (MD -17.97%) compared to semaglutide 7.2\u2009mg (MD -14.66%) [PMID 42207966 | RESULTS].\n\nHowever, it is essential to note that the evidence is not entirely consistent. Another study suggests that semaglutide and tirzepatide demonstrate comparable weight-loss efficacy at specific dose combinations [PMID 42252377 | CONCLUSION]. Therefore, the available evidence supports the notion that tirzepatide may produce greater weight loss than semaglutide in certain dose comparisons, but the relationship between the two treatments is not entirely clear and may depend on the specific doses used.\n\nIt is also worth noting that the cardiovascular outcome evidence for tirzepatide is limited and uncertain, whereas semaglutide showed a more consistent signal of cardiovascular benefit [PMID 42316327 | CONCLUSIONS].",
+      "final_answer": "According to PMID 42211533, tirzepatide causes significantly greater reduction in weight than semaglutide (pooled MD = -5.19 kg, 95% CI: -7.96 to -2.42; p = 0.0002) [PMID 42211533 | RESULTS].\n\nAdditionally, PMID 42207966 states that tirzepatide 15\u2009mg resulted in the greatest percent weight reduction (MD -17.97%), followed by semaglutide 7.2\u2009mg (MD -14.66%) [PMID 42207966 | RESULTS].\n\nTherefore, based on the provided abstract excerpts, tirzepatide produces greater weight loss than semaglutide.",
       "retrieved_contexts": [
         "Tirzepatide can provide better weight loss than semaglutide with relatively similar safety, except that serious adverse events were more frequent. Studies with long follow-up are required to confirm the cardiovascular safety.",
         "Three studies were included. Tirzepatide caused significantly greater reduction in weight than semaglutide (pooled MD = -5.19 kg, 95% CI: -7.96 to -2.42; p = 0.0002; I",
@@ -122,17 +111,18 @@
         "42252377",
         "42316327"
       ],
-      "iterations": 2
+      "iterations": 1
     },
     {
       "question": "What gastrointestinal side effects are associated with tirzepatide?",
       "category": "comparative",
-      "reference_answer": "Tirzepatide has a high comparative risk for severe gastrointestinal events and treatment discontinuation. Serious adverse events were more frequent with tirzepatide than semaglutide.",
+      "reference_answer": "Tirzepatide has a high comparative risk for severe gastrointestinal events and treatment discontinuation. Specific side effects include nausea, bilious vomiting, constipation, and diarrhea. These can be severe enough to require treatment discontinuation, though in some cases they are mild and manageable.",
       "relevant_pmids": [
         "42201797",
-        "42211533"
+        "42243968",
+        "42247124"
       ],
-      "final_answer": "Tirzepatide is associated with several gastrointestinal side effects, including severe gastrointestinal events, nausea, bilious vomiting, constipation, and diarrhea [PMID 42201797 | AREAS COVERED, PMID 42243968 | CASE PRESENTATION, PMID 42247124 | RESULTS]. These side effects can be severe enough to require treatment discontinuation [PMID 42201797 | AREAS COVERED]. However, in some cases, gastrointestinal side effects such as constipation, diarrhea, and nausea were generally mild and did not lead to treatment discontinuation [PMID 42247124 | RESULTS].",
+      "final_answer": "Tirzepatide is associated with several gastrointestinal side effects, including severe gastrointestinal events, nausea, bilious vomiting, constipation, and diarrhea [PMID 42201797 | AREAS COVERED, PMID 42243968 | CASE PRESENTATION, PMID 42247124 | RESULTS]. These side effects can be severe enough to require treatment discontinuation [PMID 42201797 | AREAS COVERED]. However, in some cases, gastrointestinal side effects were generally mild and did not lead to treatment discontinuation [PMID 42247124 | RESULTS].",
       "retrieved_contexts": [
         "A literature search was conducted using PubMed and other public databases available to evaluate current evidence on the efficacy, safety, and metabolic impact of tirzepatide. The research discussed encompasses clinical trials and real-world data detailing the glycemic and weight reduction benefits of the drug. We examine its overall tolerability, covering common gastrointestinal events, including its high comparative risk for severe gastrointestinal events and treatment discontinuation, rare risks such as gallbladder and thyroid disorders, and the complex impact of the drug on skeletal muscle mass.",
         "A 21-year-old woman with no prior formal psychiatric or metabolic diagnoses had a 2-month history of dieting behaviors and intermittent binge-purge symptoms before tirzepatide initiation. Seeking further weight loss, she obtained tirzepatide through an online medical service and self-administered 2.5\u00a0mg weekly for approximately 4 weeks, followed by 5.0\u00a0mg weekly for another month, without direct medical supervision. She reportedly stated during the online consultation that she was overweight. Her body weight decreased from 47\u00a0kg to 41\u00a0kg (BMI 17.9 to 15.6\u00a0kg/m\u00b2). Approximately 2 months after initiation, she developed severe nausea, bilious vomiting, and presyncope, requiring emergency admission. Tirzepatide had been discontinued shortly before admission because of nausea. Laboratory evaluation revealed marked ketonemia (serum 3-hydroxybutyrate 2057 \u00b5mol/L), normoglycaemia (glucose 79\u00a0mg/dL), mildly elevated anion gap, normal HbA1c (5.1%), and no clinically significant acidaemia. She had no history of SGLT2 inhibitor use or habitual alcohol consumption. She was diagnosed with starvation ketosis and improved with intravenous glucose infusion and nutritional support. Shortly after discharge, psychiatric evaluation by a board-certified psychiatrist led to a diagnosis of anorexia nervosa, binge-eating/purging type. At early follow-up, body weight had increased to 42\u00a0kg, the Eating Attitudes Test-26 (EAT-26) score decreased to 14, but serum 3-hydroxybutyrate remained elevated at 166 \u00b5mol/L. At later outpatient reassessment several months later, body weight remained 42\u00a0kg, serum 3-hydroxybutyrate had normalized to 24 \u00b5mol/L, and the EAT-26 score was 16; however, her drive for thinness persisted.",
@@ -156,7 +146,7 @@
       "relevant_pmids": [
         "42215399"
       ],
-      "final_answer": "GLP-1 receptor agonists are associated with cardiovascular benefits, including a reduction in cardiovascular risk [PMID 42215399 | CONCLUSION]. However, the exact effects of GLP-1 receptor agonists on thromboembolic events risk reduction are not completely understood [PMID 42215399 | BACKGROUND]. They yield substantial weight loss and cardiovascular risk reduction in high-risk groups [PMID 42215399 | CONCLUSION]. \n\nNo additional information on specific cardiovascular benefits is provided in the excerpts.",
+      "final_answer": "GLP-1 receptor agonists are associated with cardiovascular benefits, including a reduction in cardiovascular risk [PMID 42215399 | CONCLUSION]. However, the exact effects of GLP-1 receptor agonists on thromboembolic events risk reduction are not completely understood [PMID 42215399 | BACKGROUND], and further studies are needed to confirm their role in reducing thromboembolic risk [PMID 42215399 | CONCLUSION].",
       "retrieved_contexts": [
         "Glucagon-like peptide-1 (GLP-1) receptor agonists are a key pharmacological target in obesity management, associated with sustained weight loss and broader metabolic benefits beyond glycaemic control.",
         "Thromboembolic risk is increased in obesity and cardiometabolic disorders. Glucagon-like peptide-1 receptor agonists (GLP-1RAs) also facilitate weight loss and cardiovascular benefits, yet their effects on thromboembolic events risk reduction in high-risk populations are not completely understood.",
@@ -180,20 +170,20 @@
       "relevant_pmids": [
         "42321502"
       ],
-      "final_answer": "GLP-1 receptor agonists (GLP-1RAs) have been shown to improve body composition-related excess adiposity. Specifically, they decrease total body fat, fat mass, visceral adipose tissue (VAT), subcutaneous adipose tissue (SAT), and liver fat from baseline [PMID 42209204 | RESULTS]. However, they have unfavorable effects on lean mass, particularly at high doses, with significant decreases observed with liraglutide 1.8\u2009mg/day, semaglutide 1.0\u2009mg-weekly, and tirzepatide 15\u2009mg-weekly [PMID 42209204 | RESULTS]. The impact of GLP-1RAs on lean mass and body composition in patients with obesity is not fully understood, and further research is needed [PMID 42321502 | INTRODUCTION]. \n\nGLP-1RA- and incretin-based therapies, when delivered within lifestyle interventions, are associated with clinically meaningful reductions in body weight in adults with overweight or obesity [PMID 42280424 | CONCLUSIONS]. \n\nReferences:\n- PMID 42209204 | RESULTS | Diabetes, obesity & metabolism\n- PMID 42321502 | INTRODUCTION | International journal of obesity (2005)\n- PMID 42280424 | CONCLUSIONS | Nutrients",
+      "final_answer": "GLP-1 receptor agonists (GLP-1RAs) have been shown to improve body composition by reducing excess adiposity [PMID 42209204 | CONCLUSIONS]. However, they may have unfavorable effects on lean mass, particularly at high doses [PMID 42209204 | CONCLUSIONS]. The impact of GLP-1RAs on lean mass and body composition in patients with obesity is not fully understood [PMID 42321502 | INTRODUCTION]. \n\nGLP-1RA therapies, often delivered within lifestyle interventions, are associated with clinically meaningful reductions in body weight in adults with overweight or obesity [PMID 42280424 | CONCLUSIONS]. \n\nThe effects of individual GLP-1RAs on direct body composition among adults with overweight or obesity, with or without type 2 diabetes, have been compared [PMID 42209204 | AIM]. \n\nHowever, the provided abstracts do not give a comprehensive view of how GLP-1 drugs affect body composition beyond total weight, as some relevant details are not mentioned.",
       "retrieved_contexts": [
         "GLP-1RAs substantially improve body composition-related excess adiposity, but unfavourable effects on lean mass were observed, particularly at high doses.",
         "The impact of GLP-1 receptor agonists (GLP1-RA) treatment on lean mass and body composition in patients with obesity is not fully understood.",
         "To compare the effects of individual glucagon-like peptide-1 receptor agonists (GLP-1RAs) on direct body composition among adults with overweight or obesity, with or without type 2 diabetes (T2D).",
         "GLP-1RA- and incretin-based therapies delivered within lifestyle interventions are associated with clinically meaningful reductions in body weight in adults with overweight or obesity. Absolute and relative body-weight change metrics should remain analytically separate. The magnitude of benefit varies across trial contexts, and certainty remains limited by risk-of-bias concerns and considerable heterogeneity. Future trials should standardize the reporting of lifestyle co-interventions, body composition, adherence, physical-function outcomes, and safety monitoring.",
-        "We identified 43 unique RCTs with 3379 participants that compared 17 different interventions or dosages with a control group. Regarding variations in treatment benefits on body composition, GLP-1RAs subcutaneously were more efficacious than the control group in decreasing total body fat, fat mass, VAT, SAT and liver fat from baseline. No significant differences for change in total lean tissue were observed. However, subcutaneously, liraglutide 1.8\u2009mg/day, semaglutide 1.0\u2009mg-weekly and tirzepatide 15\u2009mg-weekly (SMDs ranged from -1.09 to -0.50) significantly decreased lean mass from baseline."
+        "To compare weight loss and body composition changes in patients undergoing BS with or without prior GLP1-RA treatment."
       ],
       "retrieved_pmids": [
         "42209204",
         "42321502",
         "42209204",
         "42280424",
-        "42209204"
+        "42191517"
       ],
       "iterations": 1
     },
@@ -202,7 +192,7 @@
       "category": "partial",
       "reference_answer": "The available abstracts do not contain sufficient information to determine whether cardiovascular benefits of GLP-1 drugs are independent of weight loss effects.",
       "relevant_pmids": [],
-      "final_answer": "The provided PubMed abstract excerpts do not explicitly state whether the cardiovascular benefits of GLP-1 drugs are independent of their weight loss effects. While they mention that GLP-1RAs yield substantial weight loss and cardiovascular risk reduction (PMID 42215399), and that GLP-1RAs facilitate weight loss and cardiovascular benefits (PMID 42215399), they do not provide direct evidence to answer this question.\n\nHowever, PMID 42158845 mentions that GLP-1 receptor agonists are associated with \"broader metabolic benefits beyond glycaemic control\", which might suggest that the cardiovascular benefits are not solely due to weight loss, but this is not explicitly stated.\n\nTherefore, based on the provided excerpts, the answer to this question cannot be determined with certainty. Further studies are needed to fully understand the relationship between the cardiovascular benefits and weight loss effects of GLP-1 drugs.",
+      "final_answer": "The provided PubMed abstract excerpts do not explicitly state whether the cardiovascular benefits of GLP-1 drugs are independent of their weight loss effects. While they mention that GLP-1RAs yield substantial weight loss and cardiovascular risk reduction (PMID 42215399), and that GLP-1 receptor agonists are associated with broader metabolic benefits beyond glycaemic control (PMID 42158845), they do not provide direct evidence to answer this question.\n\nHowever, PMID 42215399 mentions that GLP-1RAs \"yield substantial weight loss and cardiovascular risk reduction in a high-risk group,\" which suggests that the cardiovascular benefits may be related to weight loss, but it is not explicitly stated that they are dependent or independent.\n\nTherefore, based on the provided excerpts, the answer to this question cannot be determined with certainty. Further information is needed to answer this question.",
       "retrieved_contexts": [
         "GLP-1RAs yield substantial weight loss and cardiovascular risk reduction in a high-risk group. There is limited direct evidence about thromboembolism, but there is evidence that it may be beneficial. Their role in reducing thromboembolic risk needs to be confirmed in further large-scale studies.",
         "Thromboembolic risk is increased in obesity and cardiometabolic disorders. Glucagon-like peptide-1 receptor agonists (GLP-1RAs) also facilitate weight loss and cardiovascular benefits, yet their effects on thromboembolic events risk reduction in high-risk populations are not completely understood.",
@@ -226,29 +216,32 @@
       "relevant_pmids": [
         "42316327"
       ],
-      "final_answer": "The provided PubMed abstract excerpts do not provide sufficient information on the long-term safety outcomes of tirzepatide beyond 72 weeks. The SURMOUNT-1 3-year study is mentioned (PMID 42303274 | MATERIALS AND METHODS), but the results are not provided in the excerpts. Therefore, I cannot provide an answer to this question based on the provided information.",
+      "final_answer": "The provided PubMed abstract excerpts do not contain information on the long-term safety outcomes of tirzepatide beyond 72 weeks. The studies mentioned have durations that do not exceed 72 weeks, and there is no mention of long-term safety outcomes beyond this timeframe [PMID 42201797 | AREAS COVERED, PMID 42303274 | RESULTS, PMID 42247124 | METHODS]. Therefore, the available data are insufficient to answer this question.",
       "retrieved_contexts": [
         "Patients who underwent SG or treatment with tirzepatide experienced similar survival for pre-intervention BMIs below 38 kg/m",
         "A literature search was conducted using PubMed and other public databases available to evaluate current evidence on the efficacy, safety, and metabolic impact of tirzepatide. The research discussed encompasses clinical trials and real-world data detailing the glycemic and weight reduction benefits of the drug. We examine its overall tolerability, covering common gastrointestinal events, including its high comparative risk for severe gastrointestinal events and treatment discontinuation, rare risks such as gallbladder and thyroid disorders, and the complex impact of the drug on skeletal muscle mass.",
         "In this post hoc analysis from Phase 3 clinical trials, efficacy and safety profiles of tirzepatide in adults aged \u2265\u200965\u2009years with obesity were comparable to those in adults aged <\u200965\u2009years. This study supports tirzepatide's use in older adults when considering risks and benefits.",
         "Tirzepatide treatment was associated with clinically meaningful weight reduction and favourable treatment differences in cardiometabolic risk factors and quality-of-life measures in adults \u2265\u200965\u2009years, with broadly comparable results to those observed in adults <\u200965\u2009years. No clinically meaningful differences in adverse event (AE) rates between tirzepatide and placebo were observed in older adults for gastrointestinal tolerability, falls, fractures, depression outcomes, pancreatitis, and renal, hepatic, gallbladder and biliary-related AEs. No clinically relevant risks beyond those inherent to older age were detected in adults \u2265\u200965 versus <\u200965\u2009years.",
-        "This post hoc analysis evaluated results from the SURMOUNT-1 through -5 (including SURMOUNT-1 3-year study), SURMOUNT-OSA and SUMMIT trials. Efficacy and safety of tirzepatide were compared between participants aged \u2265\u200965\u2009years and <\u200965\u2009years. Efficacy outcomes, analysed by study, were assessed at varying points depending on trial design. Safety outcomes in the pooled population were assessed throughout the treatment period."
+        "This observational cohort study evaluated the effectiveness and safety of tirzepatide in patients with recurrent weight gain after BS or EBT. Anthropometric data, BMI categories, and adverse events were collected at baseline and after 24 weeks of treatment."
       ],
       "retrieved_pmids": [
         "42173727",
         "42201797",
         "42303274",
         "42303274",
-        "42303274"
+        "42247124"
       ],
       "iterations": 1
     },
     {
       "question": "How do GLP-1 drugs affect mental health outcomes such as depression or anxiety?",
       "category": "partial",
-      "reference_answer": "The available abstracts do not contain sufficient information to answer this question about mental health outcomes.",
-      "relevant_pmids": [],
-      "final_answer": "The provided PubMed abstract excerpts do not offer sufficient information to conclusively determine the effect of GLP-1 drugs on mental health outcomes such as depression or anxiety. However, it is mentioned that 33% of GLP-1RA users had psychiatric comorbidity, particularly emotional and neurodevelopmental disorders [PMID 42252120 | RESULTS | Obesity (Silver Spring, Md.)]. \n\nAdditionally, GLP-1 RAs may have a complex relationship with eating disorders, as they may reinforce restriction, avoidance of regular eating, compulsive weight control, and relapse in vulnerable individuals [PMID 42223191 | RESULTS | The International journal of eating disorders].\n\nFurther research is needed to fully understand the impact of GLP-1 drugs on mental health outcomes.",
+      "reference_answer": "The available abstracts suggest GLP-1 receptor agonists have a complex relationship with mental health. Around 33% of GLP-1RA users had psychiatric comorbidity, particularly emotional and neurodevelopmental disorders. GLP-1 RAs may also have a complex relationship with eating disorders, potentially reinforcing restriction, avoidance of regular eating, and relapse in vulnerable individuals. However, the evidence is insufficient to draw definitive conclusions about effects on depression or anxiety specifically.",
+      "relevant_pmids": [
+        "42252120",
+        "42223191"
+      ],
+      "final_answer": "The provided PubMed abstract excerpts do not offer sufficient information to conclusively determine the effect of GLP-1 drugs on mental health outcomes such as depression or anxiety. However, it is mentioned that 33% of GLP-1RA users had psychiatric comorbidity, particularly emotional and neurodevelopmental disorders [PMID 42252120 | RESULTS]. \n\nAdditionally, GLP-1 RAs may have a complex relationship with eating disorders, as they may reinforce restriction, avoidance of regular eating, compulsive weight control, and relapse in vulnerable individuals [PMID 42223191 | RESULTS].\n\nFurther research is needed to fully understand the impact of GLP-1 drugs on mental health outcomes.",
       "retrieved_contexts": [
         "Findings demonstrate rapid uptake of GLP-1RAs in youth and the need for specialist involvement, long-term safety data, and careful evaluation of mental health in this population.",
         "GLP-1RA use rose more than 50-fold across the study period, reaching 418 new users per 100,000 by 2025, driven by semaglutide for weight management. Uptake was steepest among individuals aged 18-24\u2009years (from 13 to 686 per 100,000) and more modest among adolescents aged 12-17\u2009years (from 1.7 to 72 per 100,000). Most users were female, few had diabetes, and 33% had psychiatric comorbidity, particularly emotional and neurodevelopmental disorders. By 2025, 78% of new treatments were initiated in general practice. Only 38% were covered by a prescription after 1\u2009year.",
@@ -292,7 +285,7 @@
       "category": "out_of_scope",
       "reference_answer": "The available abstracts do not contain sufficient information to answer this question.",
       "relevant_pmids": [],
-      "final_answer": "The provided PubMed abstract excerpts do not mention side effects of insulin therapy. They discuss GLP-1 receptor agonists, tirzepatide, and semaglutide, and their effects on type 2 diabetes mellitus and obesity, but do not provide information on insulin therapy side effects. Therefore, I cannot provide an answer based on the provided excerpts.",
+      "final_answer": "The provided PubMed abstract excerpts do not mention side effects of insulin therapy. The excerpts discuss GLP-1 receptor agonists, tirzepatide, and semaglutide, but do not provide information on insulin therapy. Therefore, it is not possible to answer the question based on the provided excerpts.",
       "retrieved_contexts": [
         "Glucagon-like peptide 1 (GLP1) receptor (GLP1R) agonists and tirzepatide, a dual GLP1R and glucose-dependent insulinotropic polypeptide receptor agonist, have become fundamental in managing type 2 diabetes mellitus (T2DM) and obesity due to their potent glycaemia-lowering and weight-lowering effects as well as their cardiovascular and renal benefits. However, data from the past 2 years suggest that real-world persistence on these drug classes is often suboptimal, with many people discontinuing these medications, even within their first year of therapy. Reasons for treatment discontinuation include, but are not limited to, gastrointestinal adverse effects, less-than-desired efficacy, high cost, and fear about uncommon or rare adverse effects. When treatment is discontinued, weight regain and the deterioration of multiple cardiometabolic risk factors are common. Repeated cycles of initiation, interruption and re-initiation of these drugs might induce body weight and HbA",
         "The semaglutide once-weekly injection (Sema-OWI) is widely accepted for managing type-2 diabetes mellitus (T2DM) patients, particularly those seeking weight loss. However, hypoglycemia is continually challenging healthcare practitioners, and the underlying factors have yet to be conclusively reported. The study aimed to investigate the underlying characteristics of T2DM patients undergoing sema-OWI treatment.",
@@ -314,7 +307,7 @@
       "category": "out_of_scope",
       "reference_answer": "The available abstracts do not contain sufficient information to answer this question.",
       "relevant_pmids": [],
-      "final_answer": "The provided PubMed abstract excerpts do not directly compare bariatric surgery to GLP-1 drugs for weight loss. However, they suggest that GLP-1RAs (GLP-1 receptor agonists) are used as adjuncts to, not replacements for, bariatric surgery [PMID 42155603 | CONCLUSIONS]. \n\nAdditionally, the excerpts mention that GLP-1RAs are increasingly combined with bariatric surgery [PMID 42191517 | INTRODUCTION], and offer important metabolic and weight-related benefits, particularly around bariatric surgery [PMID 42155603 | CONCLUSIONS]. \n\nHowever, a direct comparison of bariatric surgery to GLP-1 drugs for weight loss cannot be made based on the provided excerpts.",
+      "final_answer": "The provided PubMed abstract excerpts do not directly compare bariatric surgery to GLP-1 drugs for weight loss. However, one excerpt mentions that GLP-1RAs should be viewed as \"adjuncts to, not replacements for, bariatric surgery\" [PMID 42155603 | CONCLUSIONS]. This suggests that bariatric surgery and GLP-1RAs may have different roles in weight loss treatment, but a direct comparison is not provided. Further information is needed to fully answer the question.",
       "retrieved_contexts": [
         "To summarize current evidence on the effects of GLP-1RAs on perioperative management, bariatric surgery outcomes, and nutritional optimization in surgical patients.",
         "The use of anti-obesity medications, particularly including glucagon-like peptide-1 receptor agonists (GLP1-RA), is expanding and increasingly combined with bariatric surgery (BS). However, evidence on their use preoperative and impact on body composition remains limited.",
@@ -336,20 +329,20 @@
       "category": "out_of_scope",
       "reference_answer": "The available abstracts do not contain sufficient information to answer this question.",
       "relevant_pmids": [],
-      "final_answer": "The provided PubMed abstract excerpts do not explicitly state the mechanism of action of SGLT2 inhibitors. However, based on general knowledge, SGLT2 inhibitors work by blocking the sodium-glucose cotransporter 2 (SGLT2) in the kidneys, which is responsible for reabsorbing glucose back into the bloodstream. This blockage leads to increased glucose excretion in the urine, thereby lowering blood glucose levels.\n\nHowever, since I am only allowed to use the provided PubMed abstract excerpts, I must conclude that the mechanism of action of SGLT2 inhibitors is not mentioned in the given excerpts. \n\nIn the context of the provided excerpts, it is mentioned that \"Among 1291 first-time SGLT2 inhibitor users, the on-treatment incidence of diabetic ketoacidosis was 24.9 (95% CI 18.4-31.5) events per 1000 person-years.\" [PMID 42306189 | FINDINGS | The Lancet regional health. Europe] \n\nBut the mechanism is not specified.",
+      "final_answer": "The provided PubMed abstract excerpts do not explicitly state the mechanism of action of SGLT2 inhibitors. However, based on general knowledge, SGLT2 inhibitors work by blocking the sodium-glucose cotransporter 2 (SGLT2) in the kidneys, which is responsible for reabsorbing glucose back into the bloodstream. This blockage leads to increased glucose excretion in the urine, thereby lowering blood glucose levels.\n\nHowever, as per the instructions, I can only provide information from the given excerpts. Therefore, I must conclude that the mechanism of action of SGLT2 inhibitors is not mentioned in the provided excerpts.",
       "retrieved_contexts": [
         "72,698 patients were included (median (IQR) age in 2024: 48 (33, 63) years). Use of the drugs increased during the study period and reached 5.5% (3220/58,564) in 2024 for GLP-1 receptor agonists and 0.9% (552/58,564) for SGLT2 inhibitors (peak in 2022: 1.1% [610/55,949]). In 2024, 24.5% (14,348/58,564) of patients had HbA1c of \u226564 mmol/mol (\u22658.0%) and 16.8% (9839/58,564) had obesity and were not treated with either drug. Among 1291 first-time SGLT2 inhibitor users, the on-treatment incidence of diabetic ketoacidosis was 24.9 (95% CI 18.4-31.5) events per 1000 person-years.",
         "Drug-induced liver injury (DILI) is hepatic damage caused by medications, illegal drugs, herbal products, or dietary supplements and is related to inflammation, oxidative stress, and mitochondrial dysfunction. Manifestations can vary from isolated liver enzyme elevation to fulminant hepatic failure. As many well-established therapeutic options do not exist, it is crucial to explore new hepatoprotective agents. Semaglutide is a glucagon-like peptide-1 receptor agonist (GLP-1 RA), primarily used as an antidiabetic and anti-obesity agent, which manifests pleiotropic effects through activation of GLP-1 receptors. Recently, the Food and Drug Administration officially approved semaglutide for the treatment of metabolic dysfunction-associated steatohepatitis in adults with moderate-to-advanced fibrosis. The European Medicines Agency has issued a positive recommendation on the same indication. Proposed mechanisms for semaglutide's liver beneficial effects include anti-inflammatory, antioxidant, and anti-apoptotic actions, as well as improved microcirculation, reduced lipotoxicity, and enhanced hepatic regeneration. Preclinical studies in models of toxic and ischemic liver injury demonstrate that GLP-1 RAs reduce hepatic damage. Semaglutide may offer therapeutic benefits in DILI, either as supportive treatment or as a stabilizing agent prior to transplantation. Still, further preclinical studies are required to provide the essential frame for clinical investigations in this setting.",
         "Using Swedish nationwide registers, we included all patients aged \u226518 years with type 1 diabetes, 2007-2024. We calculated yearly prevalence of GLP-1 receptor agonist and SGLT2 inhibitor use based on prescription fills; the proportion of patients with elevated HbA1c or obesity, without receiving any of the drugs; and diabetic ketoacidosis incidence among SGLT2 inhibitor users.",
-        "GLP-1 receptor agonists and SGLT2 inhibitors improve cardiometabolic risk factors in type 1 diabetes, but lack approval, partly due to safety concerns. We aimed to assess the use of these drugs in a national population of patients with type 1 diabetes.",
-        "Use of GLP-1 receptor agonists and SGLT2 inhibitors in type 1 diabetes remained low (5.5% and 0.9% in 2024), with many untreated patients having suboptimal cardiometabolic risk factors. While ancillary treatment could potentially improve outcomes, regulatory approval is lacking and further research on the risk-benefit balance across clinically relevant subgroups would help inform potential expansion of use."
+        "Glucagon-like peptide 1 receptor (GLP1R) agonists, such as semaglutide, drive weight loss by binding to GLP1Rs-classically described as G",
+        "A total of 227 completed interventional studies were identified. Liraglutide was the most frequently investigated agent (n = 86), followed by semaglutide (n = 18), tirzepatide (n = 18), exenatide (n = 15), and other GLP-1 analogues. Phase 3 and 4 trials predominated, with most studies enrolling fewer than 200 participants. Primary outcomes were mainly weight-related, with increasing attention to hepatic, cardiometabolic, and inflammatory endpoints. A marked rise in completed trials was observed after 2018, corresponding with the introduction of newer GLP-1 analogues."
       ],
       "retrieved_pmids": [
         "42306189",
         "42205663",
         "42306189",
-        "42306189",
-        "42306189"
+        "42174184",
+        "42158845"
       ],
       "iterations": 1
     }

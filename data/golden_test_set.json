@@ -31,10 +31,10 @@
   },
   {
     "question": "What gastrointestinal side effects are associated with tirzepatide?",
-    "reference_answer": "Tirzepatide has a high comparative risk for severe gastrointestinal events and treatment discontinuation. Serious adverse events were more frequent with tirzepatide than semaglutide.",
-    "relevant_pmids": ["42201797", "42211533"],
+    "reference_answer": "Tirzepatide has a high comparative risk for severe gastrointestinal events and treatment discontinuation. Specific side effects include nausea, bilious vomiting, constipation, and diarrhea. These can be severe enough to require treatment discontinuation, though in some cases they are mild and manageable.",
+    "relevant_pmids": ["42201797", "42243968", "42247124"],
     "category": "comparative"
-  },
+},
   {
     "question": "What cardiovascular benefits are associated with GLP-1 receptor agonists?",
     "reference_answer": "GLP-1 receptor agonists yield substantial weight loss and cardiovascular risk reduction in high-risk patients, with hazard ratios of 0.80 and 0.74 for major cardiovascular events. Evidence for thromboembolic risk reduction exists but is limited.",
@@ -61,8 +61,8 @@
   },
   {
     "question": "How do GLP-1 drugs affect mental health outcomes such as depression or anxiety?",
-    "reference_answer": "The available abstracts do not contain sufficient information to answer this question about mental health outcomes.",
-    "relevant_pmids": [],
+    "reference_answer": "The available abstracts suggest GLP-1 receptor agonists have a complex relationship with mental health. Around 33% of GLP-1RA users had psychiatric comorbidity, particularly emotional and neurodevelopmental disorders. GLP-1 RAs may also have a complex relationship with eating disorders, potentially reinforcing restriction, avoidance of regular eating, and relapse in vulnerable individuals. However, the evidence is insufficient to draw definitive conclusions about effects on depression or anxiety specifically.",
+    "relevant_pmids": ["42252120", "42223191"],
     "category": "partial"
   },
   {

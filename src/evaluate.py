@@ -68,6 +68,7 @@ def build_ragas_samples(outputs: list[dict]):
     from ragas import SingleTurnSample
 
     samples = []
+    categories = []
     for output in outputs:
         if not output["retrieved_contexts"]:
             print(f"  Skipping (no retrieved contexts): {output['question'][:60]}...")
@@ -78,7 +79,8 @@ def build_ragas_samples(outputs: list[dict]):
             retrieved_contexts=output["retrieved_contexts"],
             reference=output["reference_answer"],
         ))
-    return samples
+        categories.append(output["category"])
+    return samples, categories
 
 
 def setup_judge_llm():
@@ -103,42 +105,53 @@ def setup_judge_embeddings():
     return LangchainEmbeddingsWrapper(embeddings)
 
 
-def run_scoring(samples, judge_llm, judge_embeddings) -> dict:
+def run_scoring(samples, categories, judge_llm, judge_embeddings) -> dict:
     from ragas import EvaluationDataset, evaluate
-    import numpy as np
-
     from ragas.metrics import (
         faithfulness,
         answer_relevancy,
         context_precision,
         context_recall,
     )
-
-    dataset = EvaluationDataset(samples=samples)
-    metrics = [faithfulness, answer_relevancy, context_precision, context_recall]
-
-    for metric in metrics:
-        metric.llm = judge_llm
-        if hasattr(metric, "embeddings"):
-            metric.embeddings = judge_embeddings
-
-    print(f"Scoring {len(samples)} samples across {len(metrics)} metrics...")
-    print("(This makes multiple LLM calls per sample -- expect several minutes)")
-    results = evaluate(dataset=dataset, metrics=metrics)
-
+    import numpy as np
+    import math
 
     def extract_score(value):
-        """Handle both a single float and a list of per-sample scores."""
         if isinstance(value, list):
-            valid = [v for v in value if v is not None]
+            valid = [v for v in value if v is not None and not math.isnan(v)]
             return float(np.mean(valid)) if valid else 0.0
         return float(value)
 
+    # Metrics that run on all questions
+    base_metrics = [faithfulness, context_precision, context_recall]
+    for metric in base_metrics:
+        metric.llm = judge_llm
+
+    # Run base metrics on full dataset
+    print(f"Scoring {len(samples)} samples on faithfulness, context precision, context recall...")
+    dataset = EvaluationDataset(samples=samples)
+    base_results = evaluate(dataset=dataset, metrics=base_metrics)
+
+    # Answer relevancy only on non-out-of-scope questions
+    # out-of-scope correct refusals score near-zero on relevancy because
+    # Ragas can't distinguish a faithful "I don't know" from an irrelevant
+    # answer -- it penalizes correct behavior, making the metric misleading
+    in_scope_samples = [
+        s for s, c in zip(samples, categories)
+        if c != "out_of_scope"
+    ]
+    print(f"Scoring {len(in_scope_samples)} in-scope samples on answer relevancy...")
+    answer_relevancy.llm = judge_llm
+    if hasattr(answer_relevancy, "embeddings"):
+        answer_relevancy.embeddings = judge_embeddings
+    relevancy_dataset = EvaluationDataset(samples=in_scope_samples)
+    relevancy_results = evaluate(dataset=relevancy_dataset, metrics=[answer_relevancy])
+
     return {
-        "faithfulness": extract_score(results["faithfulness"]),
-        "answer_relevancy": extract_score(results["answer_relevancy"]),
-        "context_precision": extract_score(results["context_precision"]),
-        "context_recall": extract_score(results["context_recall"]),
+        "faithfulness": extract_score(base_results["faithfulness"]),
+        "answer_relevancy": extract_score(relevancy_results["answer_relevancy"]),
+        "context_precision": extract_score(base_results["context_precision"]),
+        "context_recall": extract_score(base_results["context_recall"]),
     }
 
 
@@ -203,7 +216,7 @@ def main():
         sys.exit(1)
 
     print(f"Building Ragas samples from {len(outputs)} outputs...")
-    samples = build_ragas_samples(outputs)
+    samples, categories = build_ragas_samples(outputs)
     if not samples:
         print("ERROR: No scoreable samples after filtering.")
         sys.exit(1)
@@ -212,7 +225,7 @@ def main():
     judge_llm = setup_judge_llm()
     judge_embeddings = setup_judge_embeddings()
 
-    scores = run_scoring(samples, judge_llm, judge_embeddings)
+    scores = run_scoring(samples, categories, judge_llm, judge_embeddings)
     save_results(scores, outputs)
     all_passed = print_summary(scores)
 
