@@ -1,0 +1,92 @@
+[
+  {
+    "question": "What weight loss did semaglutide achieve in clinical trials?",
+    "reference_answer": "Oral semaglutide 25mg and subcutaneous semaglutide 2.4mg offer comparable efficacy for weight management in adults with obesity, with semaglutide 2.4mg causing substantial weight loss.",
+    "relevant_pmids": ["42225300"],
+    "category": "factual"
+  },
+  {
+    "question": "What effect do GLP-1 receptor agonists have on lean mass?",
+    "reference_answer": "GLP-1 receptor agonists significantly improved lean mass as a proportion of total weight in patients with obesity, with an observed increase of 1.81%, though absolute lean mass decreased significantly (-1.74 kg).",
+    "relevant_pmids": ["42321502"],
+    "category": "factual"
+  },
+  {
+    "question": "How does oral semaglutide compare to subcutaneous semaglutide for weight management?",
+    "reference_answer": "Oral semaglutide 25mg and subcutaneous semaglutide 2.4mg offer comparable efficacy for weight management in adults with obesity, with differences below the FDA threshold for clinical relevance.",
+    "relevant_pmids": ["42225300"],
+    "category": "factual"
+  },
+  {
+    "question": "Does semaglutide reduce the risk of major cardiovascular events?",
+    "reference_answer": "Semaglutide was associated with a significantly reduced risk of major adverse cardiovascular events (RR 0.71, 95% CI 0.60-0.84), with reductions in cardiovascular death, myocardial infarction, and heart failure, but not stroke. Tirzepatide showed a lower risk of myocardial infarction but did not reach statistical significance for MACE reduction.",
+    "relevant_pmids": ["42316327"],
+    "category": "factual"
+  },
+  {
+    "question": "Which drug produces greater weight loss, tirzepatide or semaglutide?",
+    "reference_answer": "Tirzepatide produces greater weight loss than semaglutide based on pooled head-to-head analyses (pooled MD = -5.19 kg, 95% CI: -7.96 to -2.42, p=0.0002). In a network meta-analysis, tirzepatide 15mg resulted in the greatest percent weight reduction (MD -17.97%) compared to semaglutide 7.2mg (MD -14.66%).",
+    "relevant_pmids": ["42211533", "42207966"],
+    "category": "comparative"
+  },
+  {
+    "question": "What gastrointestinal side effects are associated with tirzepatide?",
+    "reference_answer": "Tirzepatide has a high comparative risk for severe gastrointestinal events and treatment discontinuation. Serious adverse events were more frequent with tirzepatide than semaglutide.",
+    "relevant_pmids": ["42201797", "42211533"],
+    "category": "comparative"
+  },
+  {
+    "question": "What cardiovascular benefits are associated with GLP-1 receptor agonists?",
+    "reference_answer": "GLP-1 receptor agonists yield substantial weight loss and cardiovascular risk reduction in high-risk patients, with hazard ratios of 0.80 and 0.74 for major cardiovascular events. Evidence for thromboembolic risk reduction exists but is limited.",
+    "relevant_pmids": ["42215399"],
+    "category": "comparative"
+  },
+  {
+    "question": "How do GLP-1 drugs affect body composition beyond total weight?",
+    "reference_answer": "GLP-1 receptor agonists improve lean mass as a proportion of total weight but cause a significant decrease in absolute lean mass (-1.74 kg), suggesting muscle loss accompanies fat loss. Nutritional and exercise interventions are recommended alongside drug treatment.",
+    "relevant_pmids": ["42321502"],
+    "category": "comparative"
+  },
+  {
+    "question": "Are the cardiovascular benefits of GLP-1 drugs independent of their weight loss effects?",
+    "reference_answer": "The available abstracts do not contain sufficient information to determine whether cardiovascular benefits of GLP-1 drugs are independent of weight loss effects.",
+    "relevant_pmids": [],
+    "category": "partial"
+  },
+  {
+    "question": "What are the long-term safety outcomes of tirzepatide beyond 72 weeks?",
+    "reference_answer": "The available abstracts do not contain sufficient information to answer this question fully. Cardiovascular outcome evidence for tirzepatide remained limited and uncertain, and studies with long follow-up are required to confirm cardiovascular safety.",
+    "relevant_pmids": ["42316327"],
+    "category": "partial"
+  },
+  {
+    "question": "How do GLP-1 drugs affect mental health outcomes such as depression or anxiety?",
+    "reference_answer": "The available abstracts do not contain sufficient information to answer this question about mental health outcomes.",
+    "relevant_pmids": [],
+    "category": "partial"
+  },
+  {
+    "question": "What is the recommended dosage of metformin for type 2 diabetes?",
+    "reference_answer": "The available abstracts do not contain sufficient information to answer this question.",
+    "relevant_pmids": [],
+    "category": "out_of_scope"
+  },
+  {
+    "question": "What are the side effects of insulin therapy?",
+    "reference_answer": "The available abstracts do not contain sufficient information to answer this question.",
+    "relevant_pmids": [],
+    "category": "out_of_scope"
+  },
+  {
+    "question": "How does bariatric surgery compare to GLP-1 drugs for weight loss?",
+    "reference_answer": "The available abstracts do not contain sufficient information to answer this question.",
+    "relevant_pmids": [],
+    "category": "out_of_scope"
+  },
+  {
+    "question": "What is the mechanism of action of SGLT2 inhibitors?",
+    "reference_answer": "The available abstracts do not contain sufficient information to answer this question.",
+    "relevant_pmids": [],
+    "category": "out_of_scope"
+  }
+]

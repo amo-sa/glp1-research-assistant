@@ -12,6 +12,8 @@ data/raw/*
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+!data/processed/eval_results.json
+!data/processed/pipeline_outputs.json
 
 
 # Vector DB persistence (created in a later step)
