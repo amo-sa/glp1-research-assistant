@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from tracing import setup_tracing
 setup_tracing()
 
-from research_graph import run_research
+from research_graph import run_research # noqa: E402
 
 
 def main():

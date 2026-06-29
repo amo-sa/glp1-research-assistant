@@ -272,7 +272,7 @@ def supervisor(state: ResearchState) -> dict:
 
     if critique.startswith("APPROVED") or at_limit:
         if at_limit and not critique.startswith("APPROVED"):
-            print(f"  [supervisor] iteration limit reached, finalizing anyway")
+            print("  [supervisor] iteration limit reached, finalizing anyway")
             final = (
                 f"{state['draft_answer']}\n\n"
                 f"[Note: critique flagged issues but iteration limit reached: "
@@ -374,7 +374,7 @@ def run_research(question: str) -> ResearchState:
 
     final_state = graph.invoke(initial_state)
 
-    print(f"\nFINAL ANSWER:")
+    print("\nFINAL ANSWER:")
     print(final_state["final_answer"])
     print(f"\nCompleted in {final_state['iterations']} iteration(s)")
     print('='*60)
@@ -395,7 +395,7 @@ def main():
 
 
     for question in test_questions:
-        result = run_research(question)
+        run_research(question)
         print()
 
 

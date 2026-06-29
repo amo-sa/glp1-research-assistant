@@ -1,0 +1,24 @@
+# Secrets -- never goes in an image
+.env
+
+# Virtual environment -- we install deps fresh inside the container
+.venv/
+venv/
+
+# Data that's regenerable or too large
+data/raw/
+chroma_db/
+
+# Git history -- not needed inside the container
+.git/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS noise
+.DS_Store
+
+# VS Code
+.vscode/

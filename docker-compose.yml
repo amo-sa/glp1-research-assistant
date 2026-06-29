@@ -1,0 +1,45 @@
+# docker-compose.yml
+# Orchestrates three services:
+#   pipeline: runs the RAG pipeline and eval scripts
+#   phoenix:  the tracing UI server
+#
+# Why docker-compose over bare Docker:
+#   - Manages multiple containers as one unit (up/down together)
+#   - Handles networking between containers automatically
+#   - Mounts volumes for data persistence without long docker run commands
+#   - Single source of truth for the full environment configuration
+
+services:
+  pipeline:
+    build: .
+    # Load secrets from .env file at runtime -- never baked into the image
+    env_file: .env
+    environment:
+      - PYTHONUNBUFFERED=1
+      # Point Phoenix exporter at the phoenix service by container name
+      # (Docker Compose creates a shared network where services find each
+      # other by service name, not localhost)
+      - PHOENIX_COLLECTOR_ENDPOINT=http://phoenix:6006/v1/traces
+    volumes:
+      # Mount data directories so ingested data and eval results persist
+      # between container runs. Without volumes, data would be lost when
+      # the container stops.
+      - ./data:/app/data
+      - ./chroma_db:/app/chroma_db
+    depends_on:
+      - phoenix
+    # Keep container running so you can exec into it
+    command: tail -f /dev/null
+
+  phoenix:
+    # Phoenix provides its own Docker image
+    image: arizephoenix/phoenix:latest
+    ports:
+      # Expose Phoenix UI on host port 6006
+      - "6006:6006"
+    volumes:
+      # Persist traces between container restarts
+      - phoenix_data:/root/.phoenix
+
+volumes:
+  phoenix_data:

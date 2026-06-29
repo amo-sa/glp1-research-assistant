@@ -148,7 +148,7 @@ def rag_query(question: str, verbose: bool = True) -> dict:
     chunks = retrieve_chunks(question_vector, TOP_K)
 
     if verbose:
-        print(f"\nRetrieved chunks:")
+        print("\nRetrieved chunks:")
         for c in chunks:
             meta = c["metadata"]
             print(f"  [{c['distance']:.4f}] PMID {meta['pmid']} | "
@@ -188,7 +188,7 @@ def main():
     ]
 
     for question in test_questions:
-        result = rag_query(question)
+        rag_query(question)
         print()
 
 

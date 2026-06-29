@@ -1,0 +1,140 @@
+# CI workflow: runs on every pull request and every push to main.
+#
+# Two jobs:
+#   1. lint: fast syntax/style checks (fails fast before running expensive eval)
+#   2. eval: runs the full RAG pipeline + Ragas scoring against the golden
+#            test set. Fails if any metric drops below threshold, blocking
+#            the PR merge. This is the eval-regression gate.
+#
+# Why eval in CI:
+#   Code tests (pytest) verify correctness of functions.
+#   Eval tests verify quality of LLM outputs.
+#   Both can regress independently -- a prompt change that passes all unit
+#   tests can still cause faithfulness to drop from 0.72 to 0.45.
+#   The only way to catch that automatically is to run the eval harness
+#   on every PR, the same way you run unit tests on every PR.
+
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install linting tools
+        run: pip install ruff
+
+      - name: Run ruff
+        # ruff is a fast Python linter -- checks for syntax errors,
+        # unused imports, undefined variables, and style issues.
+        # --select E,F: only check pycodestyle errors (E) and pyflakes (F)
+        # --ignore E501: ignore line-length warnings (common in ML code
+        # with long strings/prompts)
+        run: ruff check src/ --select E,F --ignore E501
+
+  eval:
+    name: Eval regression gate
+    runs-on: ubuntu-latest
+    # Only run eval on PRs, not on every push to main
+    # (eval makes many LLM API calls -- we don't want to burn quota
+    # on every commit, only on PRs that might introduce regressions)
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          # Cache key includes requirements.txt hash -- if requirements
+          # change, cache is invalidated and packages reinstall fresh.
+          # This makes subsequent CI runs fast (packages already cached).
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create Vertex AI stub
+        # Same stub we apply in the Dockerfile -- needed here too since
+        # this job runs directly on the GitHub Actions runner, not in Docker
+        run: |
+          python -c "
+          import langchain_community.chat_models as cm
+          import os
+          stub = os.path.join(os.path.dirname(cm.__file__), 'vertexai.py')
+          open(stub, 'w').write('# stub\nclass ChatVertexAI: pass\n')
+          print('Vertex AI stub created')
+          "
+
+      - name: Restore cached Chroma vector store
+        # The Chroma vector index (built from PubMed embeddings) is large
+        # and expensive to rebuild -- embedding 686 chunks takes ~20 seconds.
+        # We cache it by key of the build_vector_store.py script hash.
+        # If the script changes (meaning embeddings might change), cache
+        # is invalidated and we rebuild from scratch.
+        uses: actions/cache@v4
+        with:
+          path: chroma_db/
+          key: chroma-${{ hashFiles('src/build_vector_store.py') }}
+
+      - name: Build vector store if not cached
+        # Only runs if chroma_db/ wasn't restored from cache.
+        # Requires the raw PubMed XML to exist -- in a real CI setup
+        # you'd either commit a small sample corpus or fetch it here.
+        # For now we use the cached chroma_db from a previous run.
+        run: |
+          if [ ! -d "chroma_db/glp1_abstracts" ]; then
+            echo "No cached vector store found -- building from scratch"
+            python src/build_vector_store.py
+          else
+            echo "Using cached vector store"
+          fi
+        env:
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
+
+      - name: Run pipeline on golden test set
+        run: python src/run_pipeline_for_eval.py
+        env:
+          JETSTREAM_API_KEY: ${{ secrets.JETSTREAM_API_KEY }}
+
+      - name: Run eval harness
+        # evaluate.py exits with code 0 if all metrics pass thresholds,
+        # code 1 if any metric fails. GitHub Actions treats non-zero exit
+        # code as step failure, which fails the job, which blocks PR merge.
+        # This is the eval-regression gate -- the entire mechanism is just
+        # a non-zero exit code. No special GitHub integration needed.
+        run: python src/evaluate.py
+        env:
+          JETSTREAM_API_KEY: ${{ secrets.JETSTREAM_API_KEY }}
+
+      - name: Upload eval results as artifact
+        # Even if the eval fails, upload the results JSON so you can
+        # inspect which metrics failed and by how much.
+        # Artifacts are downloadable from the GitHub Actions run page.
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results
+          path: data/processed/eval_results.json

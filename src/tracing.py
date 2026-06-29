@@ -28,8 +28,11 @@ from opentelemetry.sdk.trace.export import BatchSpanProcessor
 from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
 from openinference.instrumentation.langchain import LangChainInstrumentor
 
-# Phoenix's default OTLP endpoint when running locally
-PHOENIX_OTLP_ENDPOINT = "http://localhost:6006/v1/traces"
+import os
+PHOENIX_OTLP_ENDPOINT = os.getenv(
+    "PHOENIX_COLLECTOR_ENDPOINT",
+    "http://localhost:6006/v1/traces"  # default for local development
+)
 
 # Project name shown in the Phoenix UI -- groups traces by project
 PHOENIX_PROJECT_NAME = "glp1-research-assistant"

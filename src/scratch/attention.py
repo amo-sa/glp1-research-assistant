@@ -72,7 +72,7 @@ def load_model_and_weights():
     b_K = b_K_full[head_slice]     # (32,)
     b_V = b_V_full[head_slice]     # (32,)
 
-    print(f"Extracted weights for layer 0, head 0")
+    print("Extracted weights for layer 0, head 0")
     print(f"  W_Q shape: {W_Q.shape}  (d_k x d_model)")
     print(f"  W_K shape: {W_K.shape}")
     print(f"  W_V shape: {W_V.shape}")
@@ -318,7 +318,7 @@ def main():
 
     # Compare -- they should match to floating point precision
     max_diff = np.max(np.abs(our_output - model_output))
-    print(f"\nVerification:")
+    print("\nVerification:")
     print(f"  Max absolute difference between our output and model's output: {max_diff:.6f}")
 
     if max_diff < 1e-4:
